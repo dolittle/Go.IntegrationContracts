@@ -1,0 +1,2 @@
+# Dolittle Integration Contracts for Go
+This repository holds the generated Go code for the Dolittle Integration Contracts, and serves the released versions. See https://github.com/dolittle/IntegrationContracts for more information.
