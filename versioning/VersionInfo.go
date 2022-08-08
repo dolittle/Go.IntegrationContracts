@@ -3,9 +3,9 @@ package versioning
 // GetCurrentVersion returns the current version of the Contracts.
 func GetCurrentVersion() Version {
 	return Version{
-		Major:            1,
+		Major:            2,
 		Minor:            0,
-		Patch:            3,
+		Patch:            0,
 		PreReleaseString: "",
 	}
 }
