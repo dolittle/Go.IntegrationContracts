@@ -1,4 +1,4 @@
-module dolittle.io/integrations/v1
+module go.dolittle.io/integrations/contracts/v1
 
 go 1.16
 
