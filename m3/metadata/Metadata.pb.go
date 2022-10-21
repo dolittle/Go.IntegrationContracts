@@ -689,6 +689,203 @@ func (x *TableUsage) GetUsageType() string {
 	return ""
 }
 
+type M3Environment struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Tables         []*M3Environment_Table `protobuf:"bytes,1,rep,name=tables,proto3" json:"tables,omitempty"`
+	Environment    string                 `protobuf:"bytes,10,opt,name=environment,proto3" json:"environment,omitempty"`
+	DeploymentName string                 `protobuf:"bytes,11,opt,name=deployment_name,json=deploymentName,proto3" json:"deployment_name,omitempty"`
+}
+
+func (x *M3Environment) Reset() {
+	*x = M3Environment{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_M3_Metadata_Metadata_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *M3Environment) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*M3Environment) ProtoMessage() {}
+
+func (x *M3Environment) ProtoReflect() protoreflect.Message {
+	mi := &file_M3_Metadata_Metadata_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use M3Environment.ProtoReflect.Descriptor instead.
+func (*M3Environment) Descriptor() ([]byte, []int) {
+	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *M3Environment) GetTables() []*M3Environment_Table {
+	if x != nil {
+		return x.Tables
+	}
+	return nil
+}
+
+func (x *M3Environment) GetEnvironment() string {
+	if x != nil {
+		return x.Environment
+	}
+	return ""
+}
+
+func (x *M3Environment) GetDeploymentName() string {
+	if x != nil {
+		return x.DeploymentName
+	}
+	return ""
+}
+
+type M3EnvironmentColumnDiffs struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Environment1          string   `protobuf:"bytes,1,opt,name=environment1,proto3" json:"environment1,omitempty"`
+	Environment2          string   `protobuf:"bytes,2,opt,name=environment2,proto3" json:"environment2,omitempty"`
+	TablesWithDifferences []string `protobuf:"bytes,3,rep,name=tables_with_differences,json=tablesWithDifferences,proto3" json:"tables_with_differences,omitempty"`
+	DeploymentName        string   `protobuf:"bytes,11,opt,name=deployment_name,json=deploymentName,proto3" json:"deployment_name,omitempty"`
+}
+
+func (x *M3EnvironmentColumnDiffs) Reset() {
+	*x = M3EnvironmentColumnDiffs{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_M3_Metadata_Metadata_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *M3EnvironmentColumnDiffs) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*M3EnvironmentColumnDiffs) ProtoMessage() {}
+
+func (x *M3EnvironmentColumnDiffs) ProtoReflect() protoreflect.Message {
+	mi := &file_M3_Metadata_Metadata_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use M3EnvironmentColumnDiffs.ProtoReflect.Descriptor instead.
+func (*M3EnvironmentColumnDiffs) Descriptor() ([]byte, []int) {
+	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *M3EnvironmentColumnDiffs) GetEnvironment1() string {
+	if x != nil {
+		return x.Environment1
+	}
+	return ""
+}
+
+func (x *M3EnvironmentColumnDiffs) GetEnvironment2() string {
+	if x != nil {
+		return x.Environment2
+	}
+	return ""
+}
+
+func (x *M3EnvironmentColumnDiffs) GetTablesWithDifferences() []string {
+	if x != nil {
+		return x.TablesWithDifferences
+	}
+	return nil
+}
+
+func (x *M3EnvironmentColumnDiffs) GetDeploymentName() string {
+	if x != nil {
+		return x.DeploymentName
+	}
+	return ""
+}
+
+type M3Environment_Table struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name        string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Description string `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
+	Component   string `protobuf:"bytes,3,opt,name=component,proto3" json:"component,omitempty"`
+}
+
+func (x *M3Environment_Table) Reset() {
+	*x = M3Environment_Table{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_M3_Metadata_Metadata_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *M3Environment_Table) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*M3Environment_Table) ProtoMessage() {}
+
+func (x *M3Environment_Table) ProtoReflect() protoreflect.Message {
+	mi := &file_M3_Metadata_Metadata_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use M3Environment_Table.ProtoReflect.Descriptor instead.
+func (*M3Environment_Table) Descriptor() ([]byte, []int) {
+	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{8, 0}
+}
+
+func (x *M3Environment_Table) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *M3Environment_Table) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *M3Environment_Table) GetComponent() string {
+	if x != nil {
+		return x.Component
+	}
+	return ""
+}
+
 var File_M3_Metadata_Metadata_proto protoreflect.FileDescriptor
 
 var file_M3_Metadata_Metadata_proto_rawDesc = []byte{
@@ -790,7 +987,36 @@ var file_M3_Metadata_Metadata_proto_rawDesc = []byte{
 	0x55, 0x73, 0x61, 0x67, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x75,
 	0x73, 0x61, 0x67, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x09, 0x75, 0x73, 0x61, 0x67, 0x65, 0x54, 0x79, 0x70, 0x65, 0x2a, 0x23, 0x0a, 0x09, 0x46, 0x69,
+	0x09, 0x75, 0x73, 0x61, 0x67, 0x65, 0x54, 0x79, 0x70, 0x65, 0x22, 0x87, 0x02, 0x0a, 0x0d, 0x4d,
+	0x33, 0x45, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x4e, 0x0a, 0x06,
+	0x74, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x36, 0x2e, 0x64,
+	0x6f, 0x6c, 0x69, 0x74, 0x74, 0x6c, 0x65, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x6d, 0x33, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61,
+	0x2e, 0x4d, 0x33, 0x45, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x54,
+	0x61, 0x62, 0x6c, 0x65, 0x52, 0x06, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x12, 0x20, 0x0a, 0x0b,
+	0x65, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0b, 0x65, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x27,
+	0x0a, 0x0f, 0x64, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x6e, 0x61, 0x6d,
+	0x65, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x64, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x6d,
+	0x65, 0x6e, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x1a, 0x5b, 0x0a, 0x05, 0x54, 0x61, 0x62, 0x6c, 0x65,
+	0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
+	0x6e, 0x61, 0x6d, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1c, 0x0a, 0x09, 0x63, 0x6f, 0x6d, 0x70, 0x6f, 0x6e,
+	0x65, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x63, 0x6f, 0x6d, 0x70, 0x6f,
+	0x6e, 0x65, 0x6e, 0x74, 0x22, 0xc3, 0x01, 0x0a, 0x18, 0x4d, 0x33, 0x45, 0x6e, 0x76, 0x69, 0x72,
+	0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x44, 0x69, 0x66, 0x66,
+	0x73, 0x12, 0x22, 0x0a, 0x0c, 0x65, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74,
+	0x31, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x65, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e,
+	0x6d, 0x65, 0x6e, 0x74, 0x31, 0x12, 0x22, 0x0a, 0x0c, 0x65, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e,
+	0x6d, 0x65, 0x6e, 0x74, 0x32, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x65, 0x6e, 0x76,
+	0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x32, 0x12, 0x36, 0x0a, 0x17, 0x74, 0x61, 0x62,
+	0x6c, 0x65, 0x73, 0x5f, 0x77, 0x69, 0x74, 0x68, 0x5f, 0x64, 0x69, 0x66, 0x66, 0x65, 0x72, 0x65,
+	0x6e, 0x63, 0x65, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x09, 0x52, 0x15, 0x74, 0x61, 0x62, 0x6c,
+	0x65, 0x73, 0x57, 0x69, 0x74, 0x68, 0x44, 0x69, 0x66, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63, 0x65,
+	0x73, 0x12, 0x27, 0x0a, 0x0f, 0x64, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x5f,
+	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x64, 0x65, 0x70, 0x6c,
+	0x6f, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x2a, 0x23, 0x0a, 0x09, 0x46, 0x69,
 	0x65, 0x6c, 0x64, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0a, 0x0a, 0x06, 0x73, 0x74, 0x72, 0x69, 0x6e,
 	0x67, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x10, 0x01, 0x2a,
 	0x2e, 0x0a, 0x0d, 0x53, 0x6f, 0x72, 0x74, 0x44, 0x69, 0x72, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e,
@@ -818,34 +1044,38 @@ func file_M3_Metadata_Metadata_proto_rawDescGZIP() []byte {
 }
 
 var file_M3_Metadata_Metadata_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_M3_Metadata_Metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_M3_Metadata_Metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_M3_Metadata_Metadata_proto_goTypes = []interface{}{
-	(FieldType)(0),             // 0: dolittle.integrations.m3.metadata.FieldType
-	(SortDirection)(0),         // 1: dolittle.integrations.m3.metadata.SortDirection
-	(*TableMetadata)(nil),      // 2: dolittle.integrations.m3.metadata.TableMetadata
-	(*ColumnMetadata)(nil),     // 3: dolittle.integrations.m3.metadata.ColumnMetadata
-	(*Index)(nil),              // 4: dolittle.integrations.m3.metadata.Index
-	(*IndexColumn)(nil),        // 5: dolittle.integrations.m3.metadata.IndexColumn
-	(*ForeignKey)(nil),         // 6: dolittle.integrations.m3.metadata.ForeignKey
-	(*ForeignKeyRelation)(nil), // 7: dolittle.integrations.m3.metadata.ForeignKeyRelation
-	(*ProgramMetadata)(nil),    // 8: dolittle.integrations.m3.metadata.ProgramMetadata
-	(*TableUsage)(nil),         // 9: dolittle.integrations.m3.metadata.TableUsage
+	(FieldType)(0),                   // 0: dolittle.integrations.m3.metadata.FieldType
+	(SortDirection)(0),               // 1: dolittle.integrations.m3.metadata.SortDirection
+	(*TableMetadata)(nil),            // 2: dolittle.integrations.m3.metadata.TableMetadata
+	(*ColumnMetadata)(nil),           // 3: dolittle.integrations.m3.metadata.ColumnMetadata
+	(*Index)(nil),                    // 4: dolittle.integrations.m3.metadata.Index
+	(*IndexColumn)(nil),              // 5: dolittle.integrations.m3.metadata.IndexColumn
+	(*ForeignKey)(nil),               // 6: dolittle.integrations.m3.metadata.ForeignKey
+	(*ForeignKeyRelation)(nil),       // 7: dolittle.integrations.m3.metadata.ForeignKeyRelation
+	(*ProgramMetadata)(nil),          // 8: dolittle.integrations.m3.metadata.ProgramMetadata
+	(*TableUsage)(nil),               // 9: dolittle.integrations.m3.metadata.TableUsage
+	(*M3Environment)(nil),            // 10: dolittle.integrations.m3.metadata.M3Environment
+	(*M3EnvironmentColumnDiffs)(nil), // 11: dolittle.integrations.m3.metadata.M3EnvironmentColumnDiffs
+	(*M3Environment_Table)(nil),      // 12: dolittle.integrations.m3.metadata.M3Environment.Table
 }
 var file_M3_Metadata_Metadata_proto_depIdxs = []int32{
-	3, // 0: dolittle.integrations.m3.metadata.TableMetadata.columns:type_name -> dolittle.integrations.m3.metadata.ColumnMetadata
-	4, // 1: dolittle.integrations.m3.metadata.TableMetadata.primary_key:type_name -> dolittle.integrations.m3.metadata.Index
-	4, // 2: dolittle.integrations.m3.metadata.TableMetadata.indexes:type_name -> dolittle.integrations.m3.metadata.Index
-	6, // 3: dolittle.integrations.m3.metadata.TableMetadata.foreign_keys:type_name -> dolittle.integrations.m3.metadata.ForeignKey
-	0, // 4: dolittle.integrations.m3.metadata.ColumnMetadata.type:type_name -> dolittle.integrations.m3.metadata.FieldType
-	5, // 5: dolittle.integrations.m3.metadata.Index.columns:type_name -> dolittle.integrations.m3.metadata.IndexColumn
-	1, // 6: dolittle.integrations.m3.metadata.IndexColumn.direction:type_name -> dolittle.integrations.m3.metadata.SortDirection
-	7, // 7: dolittle.integrations.m3.metadata.ForeignKey.key:type_name -> dolittle.integrations.m3.metadata.ForeignKeyRelation
-	9, // 8: dolittle.integrations.m3.metadata.ProgramMetadata.tables_used:type_name -> dolittle.integrations.m3.metadata.TableUsage
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	3,  // 0: dolittle.integrations.m3.metadata.TableMetadata.columns:type_name -> dolittle.integrations.m3.metadata.ColumnMetadata
+	4,  // 1: dolittle.integrations.m3.metadata.TableMetadata.primary_key:type_name -> dolittle.integrations.m3.metadata.Index
+	4,  // 2: dolittle.integrations.m3.metadata.TableMetadata.indexes:type_name -> dolittle.integrations.m3.metadata.Index
+	6,  // 3: dolittle.integrations.m3.metadata.TableMetadata.foreign_keys:type_name -> dolittle.integrations.m3.metadata.ForeignKey
+	0,  // 4: dolittle.integrations.m3.metadata.ColumnMetadata.type:type_name -> dolittle.integrations.m3.metadata.FieldType
+	5,  // 5: dolittle.integrations.m3.metadata.Index.columns:type_name -> dolittle.integrations.m3.metadata.IndexColumn
+	1,  // 6: dolittle.integrations.m3.metadata.IndexColumn.direction:type_name -> dolittle.integrations.m3.metadata.SortDirection
+	7,  // 7: dolittle.integrations.m3.metadata.ForeignKey.key:type_name -> dolittle.integrations.m3.metadata.ForeignKeyRelation
+	9,  // 8: dolittle.integrations.m3.metadata.ProgramMetadata.tables_used:type_name -> dolittle.integrations.m3.metadata.TableUsage
+	12, // 9: dolittle.integrations.m3.metadata.M3Environment.tables:type_name -> dolittle.integrations.m3.metadata.M3Environment.Table
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_M3_Metadata_Metadata_proto_init() }
@@ -950,6 +1180,42 @@ func file_M3_Metadata_Metadata_proto_init() {
 				return nil
 			}
 		}
+		file_M3_Metadata_Metadata_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*M3Environment); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_M3_Metadata_Metadata_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*M3EnvironmentColumnDiffs); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_M3_Metadata_Metadata_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*M3Environment_Table); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -957,7 +1223,7 @@ func file_M3_Metadata_Metadata_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_M3_Metadata_Metadata_proto_rawDesc,
 			NumEnums:      2,
-			NumMessages:   8,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
