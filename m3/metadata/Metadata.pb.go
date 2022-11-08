@@ -689,6 +689,69 @@ func (x *TableUsage) GetUsageType() string {
 	return ""
 }
 
+type DeploymentMetadata struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	MdpUrl                string   `protobuf:"bytes,1,opt,name=mdp_url,json=mdpUrl,proto3" json:"mdp_url,omitempty"`
+	AvailableEnvironments []string `protobuf:"bytes,2,rep,name=available_environments,json=availableEnvironments,proto3" json:"available_environments,omitempty"`
+	DeploymentName        string   `protobuf:"bytes,11,opt,name=deployment_name,json=deploymentName,proto3" json:"deployment_name,omitempty"`
+}
+
+func (x *DeploymentMetadata) Reset() {
+	*x = DeploymentMetadata{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_M3_Metadata_Metadata_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeploymentMetadata) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeploymentMetadata) ProtoMessage() {}
+
+func (x *DeploymentMetadata) ProtoReflect() protoreflect.Message {
+	mi := &file_M3_Metadata_Metadata_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeploymentMetadata.ProtoReflect.Descriptor instead.
+func (*DeploymentMetadata) Descriptor() ([]byte, []int) {
+	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *DeploymentMetadata) GetMdpUrl() string {
+	if x != nil {
+		return x.MdpUrl
+	}
+	return ""
+}
+
+func (x *DeploymentMetadata) GetAvailableEnvironments() []string {
+	if x != nil {
+		return x.AvailableEnvironments
+	}
+	return nil
+}
+
+func (x *DeploymentMetadata) GetDeploymentName() string {
+	if x != nil {
+		return x.DeploymentName
+	}
+	return ""
+}
+
 type M3Environment struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -703,7 +766,7 @@ type M3Environment struct {
 func (x *M3Environment) Reset() {
 	*x = M3Environment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_M3_Metadata_Metadata_proto_msgTypes[8]
+		mi := &file_M3_Metadata_Metadata_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -716,7 +779,7 @@ func (x *M3Environment) String() string {
 func (*M3Environment) ProtoMessage() {}
 
 func (x *M3Environment) ProtoReflect() protoreflect.Message {
-	mi := &file_M3_Metadata_Metadata_proto_msgTypes[8]
+	mi := &file_M3_Metadata_Metadata_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -729,7 +792,7 @@ func (x *M3Environment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use M3Environment.ProtoReflect.Descriptor instead.
 func (*M3Environment) Descriptor() ([]byte, []int) {
-	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{8}
+	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *M3Environment) GetTables() []*M3Environment_Table {
@@ -774,7 +837,7 @@ type M3EnvironmentColumnDiffs struct {
 func (x *M3EnvironmentColumnDiffs) Reset() {
 	*x = M3EnvironmentColumnDiffs{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_M3_Metadata_Metadata_proto_msgTypes[9]
+		mi := &file_M3_Metadata_Metadata_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -787,7 +850,7 @@ func (x *M3EnvironmentColumnDiffs) String() string {
 func (*M3EnvironmentColumnDiffs) ProtoMessage() {}
 
 func (x *M3EnvironmentColumnDiffs) ProtoReflect() protoreflect.Message {
-	mi := &file_M3_Metadata_Metadata_proto_msgTypes[9]
+	mi := &file_M3_Metadata_Metadata_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -800,7 +863,7 @@ func (x *M3EnvironmentColumnDiffs) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use M3EnvironmentColumnDiffs.ProtoReflect.Descriptor instead.
 func (*M3EnvironmentColumnDiffs) Descriptor() ([]byte, []int) {
-	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{9}
+	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *M3EnvironmentColumnDiffs) GetEnvironment1() string {
@@ -844,7 +907,7 @@ type M3Environment_Table struct {
 func (x *M3Environment_Table) Reset() {
 	*x = M3Environment_Table{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_M3_Metadata_Metadata_proto_msgTypes[10]
+		mi := &file_M3_Metadata_Metadata_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -857,7 +920,7 @@ func (x *M3Environment_Table) String() string {
 func (*M3Environment_Table) ProtoMessage() {}
 
 func (x *M3Environment_Table) ProtoReflect() protoreflect.Message {
-	mi := &file_M3_Metadata_Metadata_proto_msgTypes[10]
+	mi := &file_M3_Metadata_Metadata_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -870,7 +933,7 @@ func (x *M3Environment_Table) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use M3Environment_Table.ProtoReflect.Descriptor instead.
 func (*M3Environment_Table) Descriptor() ([]byte, []int) {
-	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{8, 0}
+	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{9, 0}
 }
 
 func (x *M3Environment_Table) GetName() string {
@@ -907,7 +970,7 @@ type M3Environment_Program struct {
 func (x *M3Environment_Program) Reset() {
 	*x = M3Environment_Program{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_M3_Metadata_Metadata_proto_msgTypes[11]
+		mi := &file_M3_Metadata_Metadata_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -920,7 +983,7 @@ func (x *M3Environment_Program) String() string {
 func (*M3Environment_Program) ProtoMessage() {}
 
 func (x *M3Environment_Program) ProtoReflect() protoreflect.Message {
-	mi := &file_M3_Metadata_Metadata_proto_msgTypes[11]
+	mi := &file_M3_Metadata_Metadata_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -933,7 +996,7 @@ func (x *M3Environment_Program) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use M3Environment_Program.ProtoReflect.Descriptor instead.
 func (*M3Environment_Program) Descriptor() ([]byte, []int) {
-	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{8, 1}
+	return file_M3_Metadata_Metadata_proto_rawDescGZIP(), []int{9, 1}
 }
 
 func (x *M3Environment_Program) GetName() string {
@@ -1058,7 +1121,16 @@ var file_M3_Metadata_Metadata_proto_rawDesc = []byte{
 	0x55, 0x73, 0x61, 0x67, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x75,
 	0x73, 0x61, 0x67, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x09, 0x75, 0x73, 0x61, 0x67, 0x65, 0x54, 0x79, 0x70, 0x65, 0x22, 0xbc, 0x03, 0x0a, 0x0d, 0x4d,
+	0x09, 0x75, 0x73, 0x61, 0x67, 0x65, 0x54, 0x79, 0x70, 0x65, 0x22, 0x8d, 0x01, 0x0a, 0x12, 0x44,
+	0x65, 0x70, 0x6c, 0x6f, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74,
+	0x61, 0x12, 0x17, 0x0a, 0x07, 0x6d, 0x64, 0x70, 0x5f, 0x75, 0x72, 0x6c, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x6d, 0x64, 0x70, 0x55, 0x72, 0x6c, 0x12, 0x35, 0x0a, 0x16, 0x61, 0x76,
+	0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x65, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d,
+	0x65, 0x6e, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x09, 0x52, 0x15, 0x61, 0x76, 0x61, 0x69,
+	0x6c, 0x61, 0x62, 0x6c, 0x65, 0x45, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74,
+	0x73, 0x12, 0x27, 0x0a, 0x0f, 0x64, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x5f,
+	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x64, 0x65, 0x70, 0x6c,
+	0x6f, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0xbc, 0x03, 0x0a, 0x0d, 0x4d,
 	0x33, 0x45, 0x6e, 0x76, 0x69, 0x72, 0x6f, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x4e, 0x0a, 0x06,
 	0x74, 0x61, 0x62, 0x6c, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x36, 0x2e, 0x64,
 	0x6f, 0x6c, 0x69, 0x74, 0x74, 0x6c, 0x65, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
@@ -1127,7 +1199,7 @@ func file_M3_Metadata_Metadata_proto_rawDescGZIP() []byte {
 }
 
 var file_M3_Metadata_Metadata_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_M3_Metadata_Metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_M3_Metadata_Metadata_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_M3_Metadata_Metadata_proto_goTypes = []interface{}{
 	(FieldType)(0),                   // 0: dolittle.integrations.m3.metadata.FieldType
 	(SortDirection)(0),               // 1: dolittle.integrations.m3.metadata.SortDirection
@@ -1139,10 +1211,11 @@ var file_M3_Metadata_Metadata_proto_goTypes = []interface{}{
 	(*ForeignKeyRelation)(nil),       // 7: dolittle.integrations.m3.metadata.ForeignKeyRelation
 	(*ProgramMetadata)(nil),          // 8: dolittle.integrations.m3.metadata.ProgramMetadata
 	(*TableUsage)(nil),               // 9: dolittle.integrations.m3.metadata.TableUsage
-	(*M3Environment)(nil),            // 10: dolittle.integrations.m3.metadata.M3Environment
-	(*M3EnvironmentColumnDiffs)(nil), // 11: dolittle.integrations.m3.metadata.M3EnvironmentColumnDiffs
-	(*M3Environment_Table)(nil),      // 12: dolittle.integrations.m3.metadata.M3Environment.Table
-	(*M3Environment_Program)(nil),    // 13: dolittle.integrations.m3.metadata.M3Environment.Program
+	(*DeploymentMetadata)(nil),       // 10: dolittle.integrations.m3.metadata.DeploymentMetadata
+	(*M3Environment)(nil),            // 11: dolittle.integrations.m3.metadata.M3Environment
+	(*M3EnvironmentColumnDiffs)(nil), // 12: dolittle.integrations.m3.metadata.M3EnvironmentColumnDiffs
+	(*M3Environment_Table)(nil),      // 13: dolittle.integrations.m3.metadata.M3Environment.Table
+	(*M3Environment_Program)(nil),    // 14: dolittle.integrations.m3.metadata.M3Environment.Program
 }
 var file_M3_Metadata_Metadata_proto_depIdxs = []int32{
 	3,  // 0: dolittle.integrations.m3.metadata.TableMetadata.columns:type_name -> dolittle.integrations.m3.metadata.ColumnMetadata
@@ -1154,8 +1227,8 @@ var file_M3_Metadata_Metadata_proto_depIdxs = []int32{
 	1,  // 6: dolittle.integrations.m3.metadata.IndexColumn.direction:type_name -> dolittle.integrations.m3.metadata.SortDirection
 	7,  // 7: dolittle.integrations.m3.metadata.ForeignKey.key:type_name -> dolittle.integrations.m3.metadata.ForeignKeyRelation
 	9,  // 8: dolittle.integrations.m3.metadata.ProgramMetadata.tables_used:type_name -> dolittle.integrations.m3.metadata.TableUsage
-	12, // 9: dolittle.integrations.m3.metadata.M3Environment.tables:type_name -> dolittle.integrations.m3.metadata.M3Environment.Table
-	13, // 10: dolittle.integrations.m3.metadata.M3Environment.programs:type_name -> dolittle.integrations.m3.metadata.M3Environment.Program
+	13, // 9: dolittle.integrations.m3.metadata.M3Environment.tables:type_name -> dolittle.integrations.m3.metadata.M3Environment.Table
+	14, // 10: dolittle.integrations.m3.metadata.M3Environment.programs:type_name -> dolittle.integrations.m3.metadata.M3Environment.Program
 	11, // [11:11] is the sub-list for method output_type
 	11, // [11:11] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name
@@ -1266,7 +1339,7 @@ func file_M3_Metadata_Metadata_proto_init() {
 			}
 		}
 		file_M3_Metadata_Metadata_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*M3Environment); i {
+			switch v := v.(*DeploymentMetadata); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1278,7 +1351,7 @@ func file_M3_Metadata_Metadata_proto_init() {
 			}
 		}
 		file_M3_Metadata_Metadata_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*M3EnvironmentColumnDiffs); i {
+			switch v := v.(*M3Environment); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1290,7 +1363,7 @@ func file_M3_Metadata_Metadata_proto_init() {
 			}
 		}
 		file_M3_Metadata_Metadata_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*M3Environment_Table); i {
+			switch v := v.(*M3EnvironmentColumnDiffs); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1302,6 +1375,18 @@ func file_M3_Metadata_Metadata_proto_init() {
 			}
 		}
 		file_M3_Metadata_Metadata_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*M3Environment_Table); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_M3_Metadata_Metadata_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*M3Environment_Program); i {
 			case 0:
 				return &v.state
@@ -1320,7 +1405,7 @@ func file_M3_Metadata_Metadata_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_M3_Metadata_Metadata_proto_rawDesc,
 			NumEnums:      2,
-			NumMessages:   12,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
