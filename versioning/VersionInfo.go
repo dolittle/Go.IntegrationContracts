@@ -4,8 +4,8 @@ package versioning
 func GetCurrentVersion() Version {
 	return Version{
 		Major:            2,
-		Minor:            3,
-		Patch:            4,
+		Minor:            4,
+		Patch:            0,
 		PreReleaseString: "",
 	}
 }
