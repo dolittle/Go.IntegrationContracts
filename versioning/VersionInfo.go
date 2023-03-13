@@ -5,7 +5,7 @@ func GetCurrentVersion() Version {
 	return Version{
 		Major:            2,
 		Minor:            9,
-		Patch:            0,
+		Patch:            1,
 		PreReleaseString: "",
 	}
 }
