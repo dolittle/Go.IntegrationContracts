@@ -174,6 +174,55 @@ func (Comparator) EnumDescriptor() ([]byte, []int) {
 	return file_M3_Configuration_Configuration_proto_rawDescGZIP(), []int{2}
 }
 
+type CommandMappingConfiguration_ParameterMode int32
+
+const (
+	CommandMappingConfiguration_Optional  CommandMappingConfiguration_ParameterMode = 0
+	CommandMappingConfiguration_Required  CommandMappingConfiguration_ParameterMode = 1
+	CommandMappingConfiguration_Hardcoded CommandMappingConfiguration_ParameterMode = 2
+)
+
+// Enum value maps for CommandMappingConfiguration_ParameterMode.
+var (
+	CommandMappingConfiguration_ParameterMode_name = map[int32]string{
+		0: "Optional",
+		1: "Required",
+		2: "Hardcoded",
+	}
+	CommandMappingConfiguration_ParameterMode_value = map[string]int32{
+		"Optional":  0,
+		"Required":  1,
+		"Hardcoded": 2,
+	}
+)
+
+func (x CommandMappingConfiguration_ParameterMode) Enum() *CommandMappingConfiguration_ParameterMode {
+	p := new(CommandMappingConfiguration_ParameterMode)
+	*p = x
+	return p
+}
+
+func (x CommandMappingConfiguration_ParameterMode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CommandMappingConfiguration_ParameterMode) Descriptor() protoreflect.EnumDescriptor {
+	return file_M3_Configuration_Configuration_proto_enumTypes[3].Descriptor()
+}
+
+func (CommandMappingConfiguration_ParameterMode) Type() protoreflect.EnumType {
+	return &file_M3_Configuration_Configuration_proto_enumTypes[3]
+}
+
+func (x CommandMappingConfiguration_ParameterMode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use CommandMappingConfiguration_ParameterMode.Descriptor instead.
+func (CommandMappingConfiguration_ParameterMode) EnumDescriptor() ([]byte, []int) {
+	return file_M3_Configuration_Configuration_proto_rawDescGZIP(), []int{26, 0}
+}
+
 // Defines which parts of the system should be active when the connector is run as a remote controlled service
 type DeploymentConfig struct {
 	state         protoimpl.MessageState
@@ -2308,6 +2357,109 @@ func (x *ConfigureStatisticsExportInterval) GetConfigurationId() string {
 	return ""
 }
 
+type CommandMappingConfiguration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	DeploymentId     string                                                 `protobuf:"bytes,1,opt,name=deployment_id,json=deploymentId,proto3" json:"deployment_id,omitempty"`
+	CommandId        string                                                 `protobuf:"bytes,2,opt,name=command_id,json=commandId,proto3" json:"command_id,omitempty"`
+	M3Program        string                                                 `protobuf:"bytes,3,opt,name=m3_program,json=m3Program,proto3" json:"m3_program,omitempty"`
+	M3Transaction    string                                                 `protobuf:"bytes,4,opt,name=m3_transaction,json=m3Transaction,proto3" json:"m3_transaction,omitempty"`
+	CommandNamespace string                                                 `protobuf:"bytes,5,opt,name=command_namespace,json=commandNamespace,proto3" json:"command_namespace,omitempty"`
+	CommandName      string                                                 `protobuf:"bytes,6,opt,name=command_name,json=commandName,proto3" json:"command_name,omitempty"`
+	Parameters       []*CommandMappingConfiguration_CommandParameterMapping `protobuf:"bytes,7,rep,name=parameters,proto3" json:"parameters,omitempty"`
+	ConfigurationId  string                                                 `protobuf:"bytes,100,opt,name=configuration_id,json=configurationId,proto3" json:"configuration_id,omitempty"`
+}
+
+func (x *CommandMappingConfiguration) Reset() {
+	*x = CommandMappingConfiguration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_M3_Configuration_Configuration_proto_msgTypes[26]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CommandMappingConfiguration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CommandMappingConfiguration) ProtoMessage() {}
+
+func (x *CommandMappingConfiguration) ProtoReflect() protoreflect.Message {
+	mi := &file_M3_Configuration_Configuration_proto_msgTypes[26]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CommandMappingConfiguration.ProtoReflect.Descriptor instead.
+func (*CommandMappingConfiguration) Descriptor() ([]byte, []int) {
+	return file_M3_Configuration_Configuration_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *CommandMappingConfiguration) GetDeploymentId() string {
+	if x != nil {
+		return x.DeploymentId
+	}
+	return ""
+}
+
+func (x *CommandMappingConfiguration) GetCommandId() string {
+	if x != nil {
+		return x.CommandId
+	}
+	return ""
+}
+
+func (x *CommandMappingConfiguration) GetM3Program() string {
+	if x != nil {
+		return x.M3Program
+	}
+	return ""
+}
+
+func (x *CommandMappingConfiguration) GetM3Transaction() string {
+	if x != nil {
+		return x.M3Transaction
+	}
+	return ""
+}
+
+func (x *CommandMappingConfiguration) GetCommandNamespace() string {
+	if x != nil {
+		return x.CommandNamespace
+	}
+	return ""
+}
+
+func (x *CommandMappingConfiguration) GetCommandName() string {
+	if x != nil {
+		return x.CommandName
+	}
+	return ""
+}
+
+func (x *CommandMappingConfiguration) GetParameters() []*CommandMappingConfiguration_CommandParameterMapping {
+	if x != nil {
+		return x.Parameters
+	}
+	return nil
+}
+
+func (x *CommandMappingConfiguration) GetConfigurationId() string {
+	if x != nil {
+		return x.ConfigurationId
+	}
+	return ""
+}
+
 type ConfigureReadModels_Credentials struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2327,7 +2479,7 @@ type ConfigureReadModels_Credentials struct {
 func (x *ConfigureReadModels_Credentials) Reset() {
 	*x = ConfigureReadModels_Credentials{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_M3_Configuration_Configuration_proto_msgTypes[26]
+		mi := &file_M3_Configuration_Configuration_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2340,7 +2492,7 @@ func (x *ConfigureReadModels_Credentials) String() string {
 func (*ConfigureReadModels_Credentials) ProtoMessage() {}
 
 func (x *ConfigureReadModels_Credentials) ProtoReflect() protoreflect.Message {
-	mi := &file_M3_Configuration_Configuration_proto_msgTypes[26]
+	mi := &file_M3_Configuration_Configuration_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2387,6 +2539,85 @@ func (x *ConfigureReadModels_Credentials) GetExpiresAt() *timestamppb.Timestamp 
 func (x *ConfigureReadModels_Credentials) GetM3User() string {
 	if x != nil && x.M3User != nil {
 		return *x.M3User
+	}
+	return ""
+}
+
+type CommandMappingConfiguration_CommandParameterMapping struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	M3Parameter      string                                    `protobuf:"bytes,1,opt,name=m3_parameter,json=m3Parameter,proto3" json:"m3_parameter,omitempty"`
+	CommandParameter string                                    `protobuf:"bytes,2,opt,name=command_parameter,json=commandParameter,proto3" json:"command_parameter,omitempty"`
+	Description      string                                    `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Mode             CommandMappingConfiguration_ParameterMode `protobuf:"varint,4,opt,name=mode,proto3,enum=dolittle.integrations.m3.config.CommandMappingConfiguration_ParameterMode" json:"mode,omitempty"`
+	DefaultValue     *string                                   `protobuf:"bytes,5,opt,name=default_value,json=defaultValue,proto3,oneof" json:"default_value,omitempty"` // Must be set if mode is Hardcoded. Otherwise, will be used only if parameter is not passed in the API
+}
+
+func (x *CommandMappingConfiguration_CommandParameterMapping) Reset() {
+	*x = CommandMappingConfiguration_CommandParameterMapping{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_M3_Configuration_Configuration_proto_msgTypes[28]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CommandMappingConfiguration_CommandParameterMapping) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CommandMappingConfiguration_CommandParameterMapping) ProtoMessage() {}
+
+func (x *CommandMappingConfiguration_CommandParameterMapping) ProtoReflect() protoreflect.Message {
+	mi := &file_M3_Configuration_Configuration_proto_msgTypes[28]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CommandMappingConfiguration_CommandParameterMapping.ProtoReflect.Descriptor instead.
+func (*CommandMappingConfiguration_CommandParameterMapping) Descriptor() ([]byte, []int) {
+	return file_M3_Configuration_Configuration_proto_rawDescGZIP(), []int{26, 0}
+}
+
+func (x *CommandMappingConfiguration_CommandParameterMapping) GetM3Parameter() string {
+	if x != nil {
+		return x.M3Parameter
+	}
+	return ""
+}
+
+func (x *CommandMappingConfiguration_CommandParameterMapping) GetCommandParameter() string {
+	if x != nil {
+		return x.CommandParameter
+	}
+	return ""
+}
+
+func (x *CommandMappingConfiguration_CommandParameterMapping) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *CommandMappingConfiguration_CommandParameterMapping) GetMode() CommandMappingConfiguration_ParameterMode {
+	if x != nil {
+		return x.Mode
+	}
+	return CommandMappingConfiguration_Optional
+}
+
+func (x *CommandMappingConfiguration_CommandParameterMapping) GetDefaultValue() string {
+	if x != nil && x.DefaultValue != nil {
+		return *x.DefaultValue
 	}
 	return ""
 }
@@ -2818,23 +3049,71 @@ var file_M3_Configuration_Configuration_proto_rawDesc = []byte{
 	0x74, 0x65, 0x72, 0x76, 0x61, 0x6c, 0x53, 0x65, 0x63, 0x6f, 0x6e, 0x64, 0x73, 0x12, 0x29, 0x0a,
 	0x10, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
 	0x64, 0x18, 0x64, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x75,
-	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x2a, 0x21, 0x0a, 0x0d, 0x50, 0x72, 0x65, 0x64,
-	0x69, 0x63, 0x61, 0x74, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x07, 0x0a, 0x03, 0x41, 0x6c, 0x6c,
-	0x10, 0x00, 0x12, 0x07, 0x0a, 0x03, 0x41, 0x6e, 0x79, 0x10, 0x01, 0x2a, 0x2f, 0x0a, 0x08, 0x44,
-	0x61, 0x74, 0x61, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x74, 0x72, 0x69, 0x6e,
-	0x67, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x10, 0x01,
-	0x12, 0x0a, 0x0a, 0x06, 0x44, 0x6f, 0x75, 0x62, 0x6c, 0x65, 0x10, 0x02, 0x2a, 0x3e, 0x0a, 0x0a,
-	0x43, 0x6f, 0x6d, 0x70, 0x61, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x06, 0x0a, 0x02, 0x45, 0x71,
-	0x10, 0x00, 0x12, 0x06, 0x0a, 0x02, 0x4c, 0x74, 0x10, 0x01, 0x12, 0x07, 0x0a, 0x03, 0x4c, 0x74,
-	0x65, 0x10, 0x02, 0x12, 0x06, 0x0a, 0x02, 0x47, 0x74, 0x10, 0x03, 0x12, 0x07, 0x0a, 0x03, 0x47,
-	0x74, 0x65, 0x10, 0x04, 0x12, 0x06, 0x0a, 0x02, 0x4e, 0x65, 0x10, 0x05, 0x42, 0x60, 0x5a, 0x32,
-	0x67, 0x6f, 0x2e, 0x64, 0x6f, 0x6c, 0x69, 0x74, 0x74, 0x6c, 0x65, 0x2e, 0x69, 0x6f, 0x2f, 0x69,
-	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x74,
-	0x72, 0x61, 0x63, 0x74, 0x73, 0x2f, 0x76, 0x32, 0x2f, 0x6d, 0x33, 0x2f, 0x63, 0x6f, 0x6e, 0x66,
-	0x69, 0x67, 0xaa, 0x02, 0x29, 0x44, 0x6f, 0x6c, 0x69, 0x74, 0x74, 0x6c, 0x65, 0x2e, 0x49, 0x6e,
-	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x72,
-	0x61, 0x63, 0x74, 0x73, 0x2e, 0x4d, 0x33, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0xfe, 0x05, 0x0a, 0x1b, 0x43, 0x6f, 0x6d,
+	0x6d, 0x61, 0x6e, 0x64, 0x4d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x43, 0x6f, 0x6e, 0x66, 0x69,
+	0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x23, 0x0a, 0x0d, 0x64, 0x65, 0x70, 0x6c,
+	0x6f, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0c, 0x64, 0x65, 0x70, 0x6c, 0x6f, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x49, 0x64, 0x12, 0x1d, 0x0a,
+	0x0a, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x09, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x49, 0x64, 0x12, 0x1d, 0x0a, 0x0a,
+	0x6d, 0x33, 0x5f, 0x70, 0x72, 0x6f, 0x67, 0x72, 0x61, 0x6d, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x09, 0x6d, 0x33, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x61, 0x6d, 0x12, 0x25, 0x0a, 0x0e, 0x6d,
+	0x33, 0x5f, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0d, 0x6d, 0x33, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x12, 0x2b, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x5f, 0x6e, 0x61,
+	0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x63,
+	0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12,
+	0x21, 0x0a, 0x0c, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18,
+	0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x4e, 0x61,
+	0x6d, 0x65, 0x12, 0x74, 0x0a, 0x0a, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73,
+	0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x54, 0x2e, 0x64, 0x6f, 0x6c, 0x69, 0x74, 0x74, 0x6c,
+	0x65, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x6d,
+	0x33, 0x2e, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64,
+	0x4d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x75, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x50, 0x61, 0x72, 0x61,
+	0x6d, 0x65, 0x74, 0x65, 0x72, 0x4d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x52, 0x0a, 0x70, 0x61,
+	0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73, 0x12, 0x29, 0x0a, 0x10, 0x63, 0x6f, 0x6e, 0x66,
+	0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x64, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0f, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x49, 0x64, 0x1a, 0xa7, 0x02, 0x0a, 0x17, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x50,
+	0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x4d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67, 0x12,
+	0x21, 0x0a, 0x0c, 0x6d, 0x33, 0x5f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x6d, 0x33, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74,
+	0x65, 0x72, 0x12, 0x2b, 0x0a, 0x11, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x5f, 0x70, 0x61,
+	0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x63,
+	0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x12,
+	0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x5e, 0x0a, 0x04, 0x6d, 0x6f, 0x64, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32,
+	0x4a, 0x2e, 0x64, 0x6f, 0x6c, 0x69, 0x74, 0x74, 0x6c, 0x65, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x6d, 0x33, 0x2e, 0x63, 0x6f, 0x6e, 0x66, 0x69,
+	0x67, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x4d, 0x61, 0x70, 0x70, 0x69, 0x6e, 0x67,
+	0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x50, 0x61,
+	0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x4d, 0x6f, 0x64, 0x65, 0x52, 0x04, 0x6d, 0x6f, 0x64,
+	0x65, 0x12, 0x28, 0x0a, 0x0d, 0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x5f, 0x76, 0x61, 0x6c,
+	0x75, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x0c, 0x64, 0x65, 0x66, 0x61,
+	0x75, 0x6c, 0x74, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x88, 0x01, 0x01, 0x42, 0x10, 0x0a, 0x0e, 0x5f,
+	0x64, 0x65, 0x66, 0x61, 0x75, 0x6c, 0x74, 0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x3a, 0x0a,
+	0x0d, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x0c,
+	0x0a, 0x08, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08,
+	0x52, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x10, 0x01, 0x12, 0x0d, 0x0a, 0x09, 0x48, 0x61,
+	0x72, 0x64, 0x63, 0x6f, 0x64, 0x65, 0x64, 0x10, 0x02, 0x2a, 0x21, 0x0a, 0x0d, 0x50, 0x72, 0x65,
+	0x64, 0x69, 0x63, 0x61, 0x74, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x07, 0x0a, 0x03, 0x41, 0x6c,
+	0x6c, 0x10, 0x00, 0x12, 0x07, 0x0a, 0x03, 0x41, 0x6e, 0x79, 0x10, 0x01, 0x2a, 0x2f, 0x0a, 0x08,
+	0x44, 0x61, 0x74, 0x61, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x74, 0x72, 0x69,
+	0x6e, 0x67, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x65, 0x72, 0x10,
+	0x01, 0x12, 0x0a, 0x0a, 0x06, 0x44, 0x6f, 0x75, 0x62, 0x6c, 0x65, 0x10, 0x02, 0x2a, 0x3e, 0x0a,
+	0x0a, 0x43, 0x6f, 0x6d, 0x70, 0x61, 0x72, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x06, 0x0a, 0x02, 0x45,
+	0x71, 0x10, 0x00, 0x12, 0x06, 0x0a, 0x02, 0x4c, 0x74, 0x10, 0x01, 0x12, 0x07, 0x0a, 0x03, 0x4c,
+	0x74, 0x65, 0x10, 0x02, 0x12, 0x06, 0x0a, 0x02, 0x47, 0x74, 0x10, 0x03, 0x12, 0x07, 0x0a, 0x03,
+	0x47, 0x74, 0x65, 0x10, 0x04, 0x12, 0x06, 0x0a, 0x02, 0x4e, 0x65, 0x10, 0x05, 0x42, 0x60, 0x5a,
+	0x32, 0x67, 0x6f, 0x2e, 0x64, 0x6f, 0x6c, 0x69, 0x74, 0x74, 0x6c, 0x65, 0x2e, 0x69, 0x6f, 0x2f,
+	0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x63, 0x6f, 0x6e,
+	0x74, 0x72, 0x61, 0x63, 0x74, 0x73, 0x2f, 0x76, 0x32, 0x2f, 0x6d, 0x33, 0x2f, 0x63, 0x6f, 0x6e,
+	0x66, 0x69, 0x67, 0xaa, 0x02, 0x29, 0x44, 0x6f, 0x6c, 0x69, 0x74, 0x74, 0x6c, 0x65, 0x2e, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x43, 0x6f, 0x6e, 0x74,
+	0x72, 0x61, 0x63, 0x74, 0x73, 0x2e, 0x4d, 0x33, 0x2e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2849,68 +3128,73 @@ func file_M3_Configuration_Configuration_proto_rawDescGZIP() []byte {
 	return file_M3_Configuration_Configuration_proto_rawDescData
 }
 
-var file_M3_Configuration_Configuration_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_M3_Configuration_Configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 27)
+var file_M3_Configuration_Configuration_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_M3_Configuration_Configuration_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
 var file_M3_Configuration_Configuration_proto_goTypes = []interface{}{
-	(PredicateType)(0),       // 0: dolittle.integrations.m3.config.PredicateType
-	(DataType)(0),            // 1: dolittle.integrations.m3.config.DataType
-	(Comparator)(0),          // 2: dolittle.integrations.m3.config.Comparator
-	(*DeploymentConfig)(nil), // 3: dolittle.integrations.m3.config.DeploymentConfig
-	(*TableConfig)(nil),      // 4: dolittle.integrations.m3.config.TableConfig
-	(*TableMapping)(nil),     // 5: dolittle.integrations.m3.config.TableMapping
-	(*WebhookPredicate)(nil), // 6: dolittle.integrations.m3.config.WebhookPredicate
-	(*Clause)(nil),           // 7: dolittle.integrations.m3.config.Clause
-	(*ColumnMap)(nil),        // 8: dolittle.integrations.m3.config.ColumnMap
-	(*InforDocumentManagementExporterConfig)(nil), // 9: dolittle.integrations.m3.config.InforDocumentManagementExporterConfig
-	(*InforDocumentManagementConfiguration)(nil),  // 10: dolittle.integrations.m3.config.InforDocumentManagementConfiguration
-	(*M3Configuration)(nil),                       // 11: dolittle.integrations.m3.config.M3Configuration
-	(*OauthAuthentication)(nil),                   // 12: dolittle.integrations.m3.config.OauthAuthentication
-	(*BasicAuthentication)(nil),                   // 13: dolittle.integrations.m3.config.BasicAuthentication
-	(*BlobStorageConfig)(nil),                     // 14: dolittle.integrations.m3.config.BlobStorageConfig
-	(*AzureBlobStorageConfig)(nil),                // 15: dolittle.integrations.m3.config.AzureBlobStorageConfig
-	(*KafkaConfiguration)(nil),                    // 16: dolittle.integrations.m3.config.KafkaConfiguration
-	(*Topics)(nil),                                // 17: dolittle.integrations.m3.config.Topics
-	(*MetadataPublisherConfig)(nil),               // 18: dolittle.integrations.m3.config.MetadataPublisherConfig
-	(*WebhookConfiguration)(nil),                  // 19: dolittle.integrations.m3.config.WebhookConfiguration
-	(*TenantConfiguration)(nil),                   // 20: dolittle.integrations.m3.config.TenantConfiguration
-	(*ConfiguredDeployment)(nil),                  // 21: dolittle.integrations.m3.config.ConfiguredDeployment
-	(*ConfiguredCronExportTrigger)(nil),           // 22: dolittle.integrations.m3.config.ConfiguredCronExportTrigger
-	(*ConfiguredWebhookDeployment)(nil),           // 23: dolittle.integrations.m3.config.ConfiguredWebhookDeployment
-	(*EndpointConfig)(nil),                        // 24: dolittle.integrations.m3.config.EndpointConfig
-	(*ConfigureMappings)(nil),                     // 25: dolittle.integrations.m3.config.ConfigureMappings
-	(*ConfigureReadModels)(nil),                   // 26: dolittle.integrations.m3.config.ConfigureReadModels
-	(*ConfigureCredentials)(nil),                  // 27: dolittle.integrations.m3.config.ConfigureCredentials
-	(*ConfigureStatisticsExportInterval)(nil),     // 28: dolittle.integrations.m3.config.ConfigureStatisticsExportInterval
-	(*ConfigureReadModels_Credentials)(nil),       // 29: dolittle.integrations.m3.config.ConfigureReadModels.Credentials
-	(*timestamppb.Timestamp)(nil),                 // 30: google.protobuf.Timestamp
+	(PredicateType)(0), // 0: dolittle.integrations.m3.config.PredicateType
+	(DataType)(0),      // 1: dolittle.integrations.m3.config.DataType
+	(Comparator)(0),    // 2: dolittle.integrations.m3.config.Comparator
+	(CommandMappingConfiguration_ParameterMode)(0),              // 3: dolittle.integrations.m3.config.CommandMappingConfiguration.ParameterMode
+	(*DeploymentConfig)(nil),                                    // 4: dolittle.integrations.m3.config.DeploymentConfig
+	(*TableConfig)(nil),                                         // 5: dolittle.integrations.m3.config.TableConfig
+	(*TableMapping)(nil),                                        // 6: dolittle.integrations.m3.config.TableMapping
+	(*WebhookPredicate)(nil),                                    // 7: dolittle.integrations.m3.config.WebhookPredicate
+	(*Clause)(nil),                                              // 8: dolittle.integrations.m3.config.Clause
+	(*ColumnMap)(nil),                                           // 9: dolittle.integrations.m3.config.ColumnMap
+	(*InforDocumentManagementExporterConfig)(nil),               // 10: dolittle.integrations.m3.config.InforDocumentManagementExporterConfig
+	(*InforDocumentManagementConfiguration)(nil),                // 11: dolittle.integrations.m3.config.InforDocumentManagementConfiguration
+	(*M3Configuration)(nil),                                     // 12: dolittle.integrations.m3.config.M3Configuration
+	(*OauthAuthentication)(nil),                                 // 13: dolittle.integrations.m3.config.OauthAuthentication
+	(*BasicAuthentication)(nil),                                 // 14: dolittle.integrations.m3.config.BasicAuthentication
+	(*BlobStorageConfig)(nil),                                   // 15: dolittle.integrations.m3.config.BlobStorageConfig
+	(*AzureBlobStorageConfig)(nil),                              // 16: dolittle.integrations.m3.config.AzureBlobStorageConfig
+	(*KafkaConfiguration)(nil),                                  // 17: dolittle.integrations.m3.config.KafkaConfiguration
+	(*Topics)(nil),                                              // 18: dolittle.integrations.m3.config.Topics
+	(*MetadataPublisherConfig)(nil),                             // 19: dolittle.integrations.m3.config.MetadataPublisherConfig
+	(*WebhookConfiguration)(nil),                                // 20: dolittle.integrations.m3.config.WebhookConfiguration
+	(*TenantConfiguration)(nil),                                 // 21: dolittle.integrations.m3.config.TenantConfiguration
+	(*ConfiguredDeployment)(nil),                                // 22: dolittle.integrations.m3.config.ConfiguredDeployment
+	(*ConfiguredCronExportTrigger)(nil),                         // 23: dolittle.integrations.m3.config.ConfiguredCronExportTrigger
+	(*ConfiguredWebhookDeployment)(nil),                         // 24: dolittle.integrations.m3.config.ConfiguredWebhookDeployment
+	(*EndpointConfig)(nil),                                      // 25: dolittle.integrations.m3.config.EndpointConfig
+	(*ConfigureMappings)(nil),                                   // 26: dolittle.integrations.m3.config.ConfigureMappings
+	(*ConfigureReadModels)(nil),                                 // 27: dolittle.integrations.m3.config.ConfigureReadModels
+	(*ConfigureCredentials)(nil),                                // 28: dolittle.integrations.m3.config.ConfigureCredentials
+	(*ConfigureStatisticsExportInterval)(nil),                   // 29: dolittle.integrations.m3.config.ConfigureStatisticsExportInterval
+	(*CommandMappingConfiguration)(nil),                         // 30: dolittle.integrations.m3.config.CommandMappingConfiguration
+	(*ConfigureReadModels_Credentials)(nil),                     // 31: dolittle.integrations.m3.config.ConfigureReadModels.Credentials
+	(*CommandMappingConfiguration_CommandParameterMapping)(nil), // 32: dolittle.integrations.m3.config.CommandMappingConfiguration.CommandParameterMapping
+	(*timestamppb.Timestamp)(nil),                               // 33: google.protobuf.Timestamp
 }
 var file_M3_Configuration_Configuration_proto_depIdxs = []int32{
-	5,  // 0: dolittle.integrations.m3.config.TableConfig.mappings:type_name -> dolittle.integrations.m3.config.TableMapping
-	6,  // 1: dolittle.integrations.m3.config.TableMapping.webhook_predicate:type_name -> dolittle.integrations.m3.config.WebhookPredicate
-	8,  // 2: dolittle.integrations.m3.config.TableMapping.mappings:type_name -> dolittle.integrations.m3.config.ColumnMap
-	7,  // 3: dolittle.integrations.m3.config.WebhookPredicate.clauses:type_name -> dolittle.integrations.m3.config.Clause
+	6,  // 0: dolittle.integrations.m3.config.TableConfig.mappings:type_name -> dolittle.integrations.m3.config.TableMapping
+	7,  // 1: dolittle.integrations.m3.config.TableMapping.webhook_predicate:type_name -> dolittle.integrations.m3.config.WebhookPredicate
+	9,  // 2: dolittle.integrations.m3.config.TableMapping.mappings:type_name -> dolittle.integrations.m3.config.ColumnMap
+	8,  // 3: dolittle.integrations.m3.config.WebhookPredicate.clauses:type_name -> dolittle.integrations.m3.config.Clause
 	0,  // 4: dolittle.integrations.m3.config.WebhookPredicate.predicate_type:type_name -> dolittle.integrations.m3.config.PredicateType
 	2,  // 5: dolittle.integrations.m3.config.Clause.comparator:type_name -> dolittle.integrations.m3.config.Comparator
 	1,  // 6: dolittle.integrations.m3.config.ColumnMap.data_type:type_name -> dolittle.integrations.m3.config.DataType
-	14, // 7: dolittle.integrations.m3.config.InforDocumentManagementExporterConfig.blob_storage:type_name -> dolittle.integrations.m3.config.BlobStorageConfig
-	12, // 8: dolittle.integrations.m3.config.InforDocumentManagementConfiguration.ion_authentication:type_name -> dolittle.integrations.m3.config.OauthAuthentication
-	13, // 9: dolittle.integrations.m3.config.InforDocumentManagementConfiguration.basic_authentication:type_name -> dolittle.integrations.m3.config.BasicAuthentication
-	12, // 10: dolittle.integrations.m3.config.M3Configuration.oauth_authentication:type_name -> dolittle.integrations.m3.config.OauthAuthentication
-	13, // 11: dolittle.integrations.m3.config.M3Configuration.basic_authentication:type_name -> dolittle.integrations.m3.config.BasicAuthentication
-	15, // 12: dolittle.integrations.m3.config.BlobStorageConfig.azure_provider:type_name -> dolittle.integrations.m3.config.AzureBlobStorageConfig
-	17, // 13: dolittle.integrations.m3.config.KafkaConfiguration.topics:type_name -> dolittle.integrations.m3.config.Topics
-	11, // 14: dolittle.integrations.m3.config.ConfiguredDeployment.m3_configuration:type_name -> dolittle.integrations.m3.config.M3Configuration
-	10, // 15: dolittle.integrations.m3.config.ConfiguredDeployment.infor_document_management_configuration:type_name -> dolittle.integrations.m3.config.InforDocumentManagementConfiguration
-	24, // 16: dolittle.integrations.m3.config.ConfiguredWebhookDeployment.endpoints:type_name -> dolittle.integrations.m3.config.EndpointConfig
-	4,  // 17: dolittle.integrations.m3.config.ConfigureMappings.tables:type_name -> dolittle.integrations.m3.config.TableConfig
-	29, // 18: dolittle.integrations.m3.config.ConfigureReadModels.credentials:type_name -> dolittle.integrations.m3.config.ConfigureReadModels.Credentials
-	30, // 19: dolittle.integrations.m3.config.ConfigureCredentials.expires_at:type_name -> google.protobuf.Timestamp
-	30, // 20: dolittle.integrations.m3.config.ConfigureReadModels.Credentials.expires_at:type_name -> google.protobuf.Timestamp
-	21, // [21:21] is the sub-list for method output_type
-	21, // [21:21] is the sub-list for method input_type
-	21, // [21:21] is the sub-list for extension type_name
-	21, // [21:21] is the sub-list for extension extendee
-	0,  // [0:21] is the sub-list for field type_name
+	15, // 7: dolittle.integrations.m3.config.InforDocumentManagementExporterConfig.blob_storage:type_name -> dolittle.integrations.m3.config.BlobStorageConfig
+	13, // 8: dolittle.integrations.m3.config.InforDocumentManagementConfiguration.ion_authentication:type_name -> dolittle.integrations.m3.config.OauthAuthentication
+	14, // 9: dolittle.integrations.m3.config.InforDocumentManagementConfiguration.basic_authentication:type_name -> dolittle.integrations.m3.config.BasicAuthentication
+	13, // 10: dolittle.integrations.m3.config.M3Configuration.oauth_authentication:type_name -> dolittle.integrations.m3.config.OauthAuthentication
+	14, // 11: dolittle.integrations.m3.config.M3Configuration.basic_authentication:type_name -> dolittle.integrations.m3.config.BasicAuthentication
+	16, // 12: dolittle.integrations.m3.config.BlobStorageConfig.azure_provider:type_name -> dolittle.integrations.m3.config.AzureBlobStorageConfig
+	18, // 13: dolittle.integrations.m3.config.KafkaConfiguration.topics:type_name -> dolittle.integrations.m3.config.Topics
+	12, // 14: dolittle.integrations.m3.config.ConfiguredDeployment.m3_configuration:type_name -> dolittle.integrations.m3.config.M3Configuration
+	11, // 15: dolittle.integrations.m3.config.ConfiguredDeployment.infor_document_management_configuration:type_name -> dolittle.integrations.m3.config.InforDocumentManagementConfiguration
+	25, // 16: dolittle.integrations.m3.config.ConfiguredWebhookDeployment.endpoints:type_name -> dolittle.integrations.m3.config.EndpointConfig
+	5,  // 17: dolittle.integrations.m3.config.ConfigureMappings.tables:type_name -> dolittle.integrations.m3.config.TableConfig
+	31, // 18: dolittle.integrations.m3.config.ConfigureReadModels.credentials:type_name -> dolittle.integrations.m3.config.ConfigureReadModels.Credentials
+	33, // 19: dolittle.integrations.m3.config.ConfigureCredentials.expires_at:type_name -> google.protobuf.Timestamp
+	32, // 20: dolittle.integrations.m3.config.CommandMappingConfiguration.parameters:type_name -> dolittle.integrations.m3.config.CommandMappingConfiguration.CommandParameterMapping
+	33, // 21: dolittle.integrations.m3.config.ConfigureReadModels.Credentials.expires_at:type_name -> google.protobuf.Timestamp
+	3,  // 22: dolittle.integrations.m3.config.CommandMappingConfiguration.CommandParameterMapping.mode:type_name -> dolittle.integrations.m3.config.CommandMappingConfiguration.ParameterMode
+	23, // [23:23] is the sub-list for method output_type
+	23, // [23:23] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_M3_Configuration_Configuration_proto_init() }
@@ -3232,7 +3516,31 @@ func file_M3_Configuration_Configuration_proto_init() {
 			}
 		}
 		file_M3_Configuration_Configuration_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CommandMappingConfiguration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_M3_Configuration_Configuration_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ConfigureReadModels_Credentials); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_M3_Configuration_Configuration_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CommandMappingConfiguration_CommandParameterMapping); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3265,14 +3573,15 @@ func file_M3_Configuration_Configuration_proto_init() {
 		(*ConfiguredDeployment_InforDocumentManagementConfiguration)(nil),
 	}
 	file_M3_Configuration_Configuration_proto_msgTypes[24].OneofWrappers = []interface{}{}
-	file_M3_Configuration_Configuration_proto_msgTypes[26].OneofWrappers = []interface{}{}
+	file_M3_Configuration_Configuration_proto_msgTypes[27].OneofWrappers = []interface{}{}
+	file_M3_Configuration_Configuration_proto_msgTypes[28].OneofWrappers = []interface{}{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_M3_Configuration_Configuration_proto_rawDesc,
-			NumEnums:      3,
-			NumMessages:   27,
+			NumEnums:      4,
+			NumMessages:   29,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
